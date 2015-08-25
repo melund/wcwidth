@@ -1,0 +1,21 @@
+package:
+  name: wcwidth
+  version: {{ environ['GIT_DESCRIBE_TAG'] }}
+
+source:
+   path: ../
+
+build:
+  script: python setup.py install
+  number: {{ environ.get('GIT_DESCRIBE_NUMBER', 0) }}
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+
+about:
+  home: https://github.com/jquast/wcwidth
+  license: MIT
+  summary: Measures number of Terminal column cells of wide-character codes
